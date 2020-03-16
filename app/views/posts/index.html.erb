@@ -25,5 +25,8 @@
 </table>
 
 <br>
-
-<%= link_to 'Crear Post', new_post_path, class:"waves-effect waves-light btn" %>
+<% if user_signed_in? %>
+  <%= link_to 'Crear Post', new_post_path, class:"waves-effect waves-light btn" %>
+<% else %>
+  <%= link_to "Crear Post", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
